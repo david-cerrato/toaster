@@ -1,0 +1,14 @@
+<div class="container-absolute">
+    <div class="container-relative">
+    <app-toaster-item 
+      *ngFor="let msg of msgArr; let i=index" 
+      [toastItem]="msg" 
+      [visible]="i >= msgArr.length-3" 
+      [lastBox1]="msgArr.length-1 === i" 
+      [lastBox2]="msgArr.length-2 === i" 
+      [lastBox3]="msgArr.length-3 === i"
+      (delete)="deleteMsg(i)"
+      [duration]="1000"
+    ></app-toaster-item>
+    </div>
+  </div>  
