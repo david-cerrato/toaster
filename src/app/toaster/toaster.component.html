@@ -1,4 +1,10 @@
-<div class="container-absolute">
+<div class="container-absolute"
+[class.top]="position === 'top-left' || position === 'top-center' || position === 'top-right'"
+[class.bottom]="position === 'bottom-left' || position === 'bottom-center' || position === 'bottom-right'"
+[class.left]="position === 'bottom-left' || position === 'top-left'"
+[class.center]="position === 'bottom-center' || position === 'top-center'"
+[class.right]="position === 'bottom-right' || position === 'top-right'"
+>
     <div class="container-relative">
     <app-toaster-item 
       *ngFor="let msg of msgArr; let i=index" 
@@ -8,7 +14,7 @@
       [lastBox2]="msgArr.length-2 === i" 
       [lastBox3]="msgArr.length-3 === i"
       (delete)="deleteMsg(i)"
-      [duration]="1000"
+      [duration]="duration"
     ></app-toaster-item>
     </div>
   </div>  
