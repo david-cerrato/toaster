@@ -3,7 +3,7 @@
   }
   
   .body {
-    width: 100vw;
+    /* width: 100vw; */
     height: 100vh;
     margin: 0;
     display: flex;
@@ -25,3 +25,8 @@ button {
     background-color: rgb(1, 90, 1);
   }
   
+  .btn-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 0.5rem;
+  }

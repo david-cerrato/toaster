@@ -1,8 +1,8 @@
 .container-absolute {
-    transform: translateX(-50%);
-    left: 50%;
     position: absolute;
     bottom: 0rem;
+    width: fit-content;
+    height: fit-content;
   }
   
   .container-relative {
@@ -10,4 +10,27 @@
     height: 6rem;
     width: 30rem;
     overflow-y: clip;
+  }
+
+  .top {
+    top: 0;
+  }
+
+  .bottom{
+    bottom: 0;
+  }
+
+  .left{
+    left: 0;
+    margin-left: 8px;
+  }
+
+  .center{
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .right{
+    right: 0;
+    margin-right: 8px;
   }
