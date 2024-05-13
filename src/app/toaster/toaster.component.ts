@@ -8,7 +8,7 @@ import { Toast } from './toaster.interface';
 })
 export class ToasterComponent {
   @Input() msgArr: Toast[] = [];
-  @Input() duration: number = 50000;
+  @Input() duration: number = 2000;
   @Input() position: 'top-left' | 'top-center' | 'top-right' | 'bottom-left' |'bottom-center' | 'bottom-right' = 'bottom-center'
 
   AddNew(newToast: Toast) {

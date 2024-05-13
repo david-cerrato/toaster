@@ -1,42 +1,112 @@
-/* :host {
-  --time: 5000ms;
-} */
-
+/* Aspecto general de la caja */
 .box {
-    height: 3rem;
+    height: 50%;
     width: 24rem;
-    background-color: white;
-    margin-bottom: 8px;
     border-radius: 8px;
+
+    background-color: white;
     color: black;
+    overflow: hidden;
     visibility: hidden;
     position: absolute;
     left: 50%;
     transform: translate(-50%, 0);
   
-    animation-name: MoveUp;
     animation-duration: 0.2s;
     animation-timing-function: ease-out;
-    transition-property: bottom, left, width;
+    transition-property: top, bottom, left, width;
     transition-duration: 0.2s;
     transition-timing-function: ease-out;
   
+    
     display: grid;
     grid-template-rows: 1fr 4px;
     align-items: center;
     justify-items: left;
+  }
+
+  .content {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
   
+  .msg {
+    margin-left: 16px;
+  }
+  
+  .close-btn {
+    margin-right: 16px;
+  }
+
+  .visible {
+    visibility: visible;
+  }
+
+  .bottom{
+    animation-name: AppearBottom;
     box-shadow: 0px -5px 15px 0px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-  }
-  
-  .life-end {
-    animation-name: MoveDown;
-    animation-duration: 0.2s;
+    margin-bottom: 8px;
+    
+    &.lastBox-1{
+      bottom: 0;
+      width: 30rem;
+    }
+
+    &.lastBox-2{
+      bottom: 0.5rem;
+      width: 29rem;
+    }
+
+    &.lastBox-3{
+      bottom: 0.95rem;
+      width: 28rem;
+    }
+
+    &.life-end{
+      animation-name: DisappearBottom;
+    animation-duration: 0.25s;
     animation-timing-function: ease-out;
+
+    &.lastBox-1{
+      animation-name: DisappearBottomLast;
+    }
+    }
+  }
+
+  .top{
+    animation-name: AppearTop;
+    box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.1);
+    margin-top: 8px;
+    
+    &.lastBox-1{
+      top: 0;
+      width: 30rem;
+    }
+
+    &.lastBox-2{
+      top: 0.5rem;
+      width: 29rem;
+    }
+
+    &.lastBox-3{
+      top: 0.95rem;
+      width: 28rem;
+    }
+
+    &.life-end{
+      animation-name: DisappearTop;
+      animation-duration: 0.25s;
+      animation-timing-function: ease-out;
+
+      &.lastBox-1{
+        animation-name: DisappearTopLast;
+      }
+    }
   }
   
-  @keyframes MoveUp {
+  
+  @keyframes AppearBottom {
     0% {
       transform: translate(-50%, 50px);
     }
@@ -45,34 +115,64 @@
     }
   }
   
-  @keyframes MoveDown {
+  @keyframes DisappearBottom {
     0% {
       transform: translate(-50%, 0px);
+      opacity: 1;
     }
     100% {
-      transform: translate(-50%, 0.5rem);
+      transform: translate(-50%, 12px);
+      opacity: 0;
+    }
+  }
+
+  @keyframes DisappearBottomLast {
+    0% {
+      transform: translate(-50%, 0px);
+      opacity: 1;
+    }
+    100% {
+      transform: translate(-50%, 50px);
+      opacity: 0;
+    }
+  }
+
+  @keyframes AppearTop {
+    0% {
+      transform: translate(-50%, -50px);
+    }
+    100% {
+      transform: translate(-50%, 0px);
     }
   }
   
-  .lastBox-3 {
-    bottom: 1rem;
-    width: 26rem;
+  @keyframes DisappearTop {
+    0% {
+      transform: translate(-50%, 0px);
+      opacity: 1;
+    }
+    100% {
+      transform: translate(-50%, -12px);
+      opacity: 0;
+    }
+  }
+
+  @keyframes DisappearTopLast {
+    0% {
+      transform: translate(-50%, 0px);
+      opacity: 1;
+    }
+    100% {
+      transform: translate(-50%, -50px);
+      opacity: 0;
+    }
   }
   
-  .lastBox-2 {
-    bottom: 0.5rem;
-    width: 28rem;
-  }
-  
-  .lastBox-1 {
-    bottom: 0;
-    width: 30rem;
-  }
-  
-  .visible {
-    visibility: visible;
-  }
-  
+
+
+
+
+
   .timeline {
     width: 100%;
     height: 4px;
@@ -94,18 +194,6 @@
     }
   }
   
-  .content {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-  }
-  
-  .msg {
-    margin-left: 16px;
-  }
-  
-  .close-btn {
-    margin-right: 16px;
-  }
+
   
   /* TODO Cambiar animaciones para cuando se situa arriba sea a la inversa */
