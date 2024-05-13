@@ -1,7 +1,15 @@
-<div class="box" [class.visible]="visible" [class.lastBox-1]="lastBox1" [class.lastBox-2]="lastBox2" [class.lastBox-3]="lastBox3" [class.life-end]="lifeEnd">
+<div class="box" 
+[class.visible]="visible" 
+[class.lastBox-1]="lastBox1" 
+[class.lastBox-2]="lastBox2" 
+[class.lastBox-3]="lastBox3" 
+[class.life-end]="lifeEnd"
+[class.bottom]="position === 'bottom-left' || position === 'bottom-center' || position === 'bottom-right'" 
+[class.top]="position === 'top-left' || position === 'top-center' || position === 'top-right'" 
+>
     <div class="content" >
       <span class="msg">{{toastItem.msg}}</span>
       <span class="close-btn" (click)="deleteMsg()">x</span>
     </div>
-   <div class="timeline" style="--time: {{duration}}ms"></div>
+   <!-- <div class="timeline" style="--time: {{duration}}ms"></div> -->
 </div>
