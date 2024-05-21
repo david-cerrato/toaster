@@ -1,1 +1,12 @@
-/* You can add global styles to this file, and also import other style files */
+@font-face {
+  font-family: 'Satoshi';
+  src: url('assets/satoshi/Satoshi-Variable.ttf');
+}
+
+*{
+  font-family: "Satoshi", sans-serif;
+}
+
+body{
+  background-color: #000000;
+}
