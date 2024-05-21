@@ -7,7 +7,7 @@
   
   .container-relative {
     position: relative;
-    height: 6rem;
+    height: 10rem;
     width: 30rem;
     overflow-y: clip;
   }

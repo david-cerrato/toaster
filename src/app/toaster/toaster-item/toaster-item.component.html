@@ -7,9 +7,9 @@
 [class.bottom]="position === 'bottom-left' || position === 'bottom-center' || position === 'bottom-right'" 
 [class.top]="position === 'top-left' || position === 'top-center' || position === 'top-right'" 
 >
-    <div class="content" >
-      <span class="msg">{{toastItem.msg}}</span>
-      <span class="close-btn" (click)="deleteMsg()">x</span>
-    </div>
-   <!-- <div class="timeline" style="--time: {{duration}}ms"></div> -->
+  <app-icon [msgtype]="toastItem.type"></app-icon>
+  <div class="content" >
+    <span class="header-msg">{{toastItem.msg}}</span>
+    <span class="msg">{{toastItem.msg}}</span>
+  </div>
 </div>
