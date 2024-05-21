@@ -1,4 +1,11 @@
 <div class="body">
-  <app-toaster [msgArr]="arr"></app-toaster> 
-  <button (click)="addNew({ msg: 'Nuevo mensaje', type: 'default' })">Añadir item</button>
+  <div class="btn-container">
+    <button (click)="addNew({ msg: 'Nuevo mensaje', type: 'default' }, 'bottom-center')">Añadir default</button>
+    <button (click)="addNew({ msg: 'Nueva alerta', type: 'warning' }, 'bottom-center')">Añadir warning</button>
+    <button (click)="addNew({ msg: 'Nuevo error', type: 'error' }, 'bottom-center')">Añadir error</button>
+    <button (click)="addNew({ msg: 'Nuevo info', type: 'info' }, 'bottom-center')">Añadir info</button>
+    <!-- <button (click)="addNew({ msg: 'Nuevo mensaje', type: 'default' }, 'bottom-center')">Añadir item abajo centro</button>
+    <button (click)="addNew({ msg: 'Nuevo mensaje', type: 'default' }, 'bottom-right')">Añadir item abajo dcha</button> -->
+  </div>
 </div>
+<app-toaster [msgArr]="arr" [position]="pos"></app-toaster>

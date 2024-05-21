@@ -13,6 +13,7 @@ export class ToasterItemComponent {
   @Input() lastBox2: boolean = false;
   @Input() lastBox3: boolean = false;
   @Input() duration!: number;
+  @Input() position: 'top-left' | 'top-center' | 'top-right' | 'bottom-left' |'bottom-center' | 'bottom-right' = 'bottom-center';
   @Output() delete: EventEmitter<any> = new EventEmitter();
   lifeEnd: boolean = false;
 
@@ -23,7 +24,7 @@ export class ToasterItemComponent {
     }, this.duration);
     setTimeout(() => {
       this.delete.emit();
-    }, this.duration+200);
+    }, this.duration+100);
   }
 
   constructor(private renderer: Renderer2) {

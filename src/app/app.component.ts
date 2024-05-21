@@ -8,9 +8,11 @@ import { Toast } from './toaster/toaster.interface';
 })
 export class AppComponent {
   arr: Toast[] = []
+  pos : 'top-left' | 'top-center' | 'top-right' | 'bottom-left' |'bottom-center' | 'bottom-right' = 'bottom-center' 
   title = 'toaster';
 
-  addNew(newToast: Toast){
+  addNew(newToast: Toast, pos: 'top-left' | 'top-center' | 'top-right' | 'bottom-left' |'bottom-center' | 'bottom-right'){
     this.arr.push(newToast)
+    this.pos = pos;
   }
 }
