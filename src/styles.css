@@ -10,3 +10,29 @@
 body{
   background-color: #000000;
 }
+
+:root{
+  --main: #171717;
+  --border: rgb(37, 37, 37);
+  --gradient-start: rgb(10, 10, 10);
+  --hover: rgb(61, 61, 61);
+  --text: #fff;
+  --success: rgba(77, 255, 83, 0.35);
+  --warning: rgba(252, 254, 141, 0.35);
+  --error: rgba(255, 100, 128, 0.35);
+  --info: rgba(87, 154, 255, 0.35);
+}
+
+@media (prefers-color-scheme: light){
+  :root{
+    --main: #ffffff;
+    --border: rgb(187, 187, 187);
+    --gradient-start: rgb(226, 226, 226);
+    --hover: rgb(185, 185, 185);
+    --text: #171717;
+    --success: rgba(0, 183, 7, 0.4);
+    --warning: rgba(253, 154, 6, 0.25);
+    --error: rgba(253, 6, 6, 0.25);
+    --info: rgba(6, 105, 253, 0.25);
+  }
+}

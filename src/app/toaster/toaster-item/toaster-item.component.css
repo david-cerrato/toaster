@@ -1,17 +1,29 @@
 /* Aspecto general de la caja */
-:host{
-  --dark-main: #171717;
+/* :host{
+  --main: #171717;
+  --border: rgb(37, 37, 37);
+  --gradient-start: rgb(10, 10, 10);
+  --hover: rgb(61, 61, 61);
+  --text: #fff;
 }
 
+@media (prefers-color-scheme: light){
+  :host{
+    --main: #ffffff;
+    --border: rgb(187, 187, 187);
+    --gradient-start: rgb(226, 226, 226);
+    --hover: rgb(223, 223, 223);
+    --text: #171717;
+  }
+} */
+
 .box {
-  height: calc(6rem - 48px);
+  height: calc(5rem - 24px);
   width: 24rem;
   border-radius: 8px;
-  padding: 24px;
+  padding: 12px 24px;
+  border: 1px solid var(--border);
 
-  /* background-color: var(--dark-main); */
-
-  /* color: white; */
   overflow: hidden;
   visibility: hidden;
   position: absolute;
@@ -28,36 +40,41 @@
   display: flex;
   gap: 24px;
   align-items: center;
-  justify-content: left;
+  justify-content: space-between;
 }
 
 .content {
   width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 0.25rem;
-  /* justify-content: space-between; */
-
+  gap: 0rem;
+  flex: 1;
 }
 
 
 
 .header-msg{
   font-weight: 500;
-  color: white;
+  color: var(--text);
 }
 
 .msg {
-  /* margin-left: 16px; */
-  color: white;
   font-size: 0.75rem;
   font-weight: 400;
-  color: #CBCBCB;
-
+  color: var(--text);
 }
 
-.close-btn {
-  margin-right: 16px;
+.btn {
+  padding: 0.35rem 0.7rem;
+  background-color: var(--main);
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 0.25rem;
+
+  &:hover{
+    cursor: pointer;
+    background-color: var(--hover);
+  }
 }
 
 .visible {
@@ -68,7 +85,7 @@
   animation-name: AppearBottom;
   box-shadow: 0px 0px 12px 2px rgba(0, 0, 0, 0.5);
   margin-bottom: 8px;
-  background-image: linear-gradient(0deg, rgb(5, 5, 5), #171717);
+  background-image: linear-gradient(0deg, var(--gradient-start), var(--main));
   
   &.lastBox-1{
     bottom: 0;
@@ -103,7 +120,7 @@
   animation-name: AppearTop;
   box-shadow: 0px 0px 12px 2px rgba(0, 0, 0, 0.25);
   margin-top: 8px;
-  background-image: linear-gradient(180deg, rgb(5, 5, 5), #171717);
+  background-image: linear-gradient(180deg, var(--gradient-start), var(--main));
   
   &.lastBox-1{
     top: 0;
